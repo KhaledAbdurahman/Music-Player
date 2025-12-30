@@ -1,12 +1,12 @@
 import { useMusic } from "../hooks/useMusic";
 
 export const AllSongs = () => {
-  const { AllSongs, handlePlaySong, currentTrackIndex } = useMusic();
+  const { allSongs, handlePlaySong, currentTrackIndex } = useMusic();
   return (
     <div className="all-songs">
-      <h2>All Songs ({AllSongs.length})</h2>
+      <h2>All Songs ({allSongs.length})</h2>
       <div className="songs-grid">
-        {AllSongs.map((song, key) => (
+        {allSongs.map((song, key) => (
           <div
             key={key}
             className={`song-card ${currentTrackIndex === key ? "active" : ""}`}
