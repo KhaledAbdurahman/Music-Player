@@ -1,4 +1,4 @@
-import { useMusic } from "../hooks/useMusic";
+import { useMusic } from "../contexts/MusicContext";
 
 export const AllSongs = () => {
   const { allSongs, handlePlaySong, currentTrackIndex } = useMusic();
@@ -18,7 +18,7 @@ export const AllSongs = () => {
               <span className="song-duration">{song.duration}</span>
             </div>
             <div className="play-button">
-              {currentTrackIndex == key ? "♪" : "▶"}
+              {currentTrackIndex === key ? "♪" : "▶"}
             </div>
           </div>
         ))}
