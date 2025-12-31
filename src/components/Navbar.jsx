@@ -1,6 +1,7 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 export const Navbar = () => {
+  const location = useLocation();
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -10,10 +11,18 @@ export const Navbar = () => {
       </div>
 
       <div className="navbar-links">
-        <Link to="/" className={`nav-link active`}>
+        <Link
+          to="/"
+          className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+        >
           All Songs
         </Link>
-        <Link to="/playlists" className={`nav-link`}>
+        <Link
+          to="/playlists"
+          className={`nav-link ${
+            location.pathname === "/playlists" ? "active" : ""
+          }`}
+        >
           Playlists
         </Link>
       </div>
